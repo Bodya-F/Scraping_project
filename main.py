@@ -46,7 +46,7 @@ def scrape_quotes():
 
     while url:
         print(f"Scrapping following page: {BASE_URL}{url}")
-        # sleep(2)
+        sleep(5)
         req = requests.get(f"{BASE_URL}{url}")
         data = BeautifulSoup(req.text, "html.parser")
         quotes = data.find_all(class_="quote")
