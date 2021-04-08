@@ -5,33 +5,6 @@ import requests
 
 BASE_URL = "http://quotes.toscrape.com/"
 
-# def main():
-#     authors = scrape_pages(url)
-#
-#     while True:
-#         game_quote = random.choice(authors)
-#         attemts = 4
-#         print(game_quote)
-#         print("Who is the author of: "+game_quote[0])
-#         author_birthday = get_author_birthday(url+game_quote[2])
-#
-#         while attemts > 0:
-#             if check_answer(attemts, game_quote[1], author_birthday):
-#                 print("WOO-HOO")
-#                 print("You are right")
-#                 break
-#             elif attemts > 1:
-#                 attemts -= 1
-#                 print("it is wrong answer.")
-#                 print(f"{attemts} attemts left")
-#             elif attemts == 1:
-#                 attemts -= 1
-#                 print("You lose the game")
-#         if input("do you want to play again? (yes/no)") == "no":
-#             break
-#
-#     print("Good luck!")
-
 def play_game(all_quotes):
     quote = choice(all_quotes)
     remaining_guesses = 4
