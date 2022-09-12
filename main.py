@@ -65,5 +65,19 @@ def scrape_quotes():
 def main():
     all_quotes = scrape_quotes()
     play_game(all_quotes)
+    open_file()
+#
 
+def open_file():
+    f = open('/Users/bohdan/Documents/names.txt', 'r')
+    content = f.read()
+
+    soup = BeautifulSoup(content, "html.parser")
+    full_name = soup.find_all(class_="attendee-list-item_username__2CJh4 test-id-attendee-name")
+    headline = soup.find_all(class_="attendee-list-item_headline__1Z-H5 test-id-attendee-headline")
+
+    for i in range(0, len(full_name)):
+        print(f"{full_name[i].get_text()}|{headline[i].get_text()}")
+
+    # print(full_name[0].get_text(), headline)
 main()
